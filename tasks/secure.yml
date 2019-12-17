@@ -1,6 +1,6 @@
 # file: mysql/tasks/secure.yml
 
-- name: MySQL | Test whether the root password has already been changed (external hostname).
+- name: Test whether the root password has already been changed (external hostname).
   mysql_user:
     user: root
     host: "{{item}}"
@@ -19,7 +19,7 @@
   tags:
     - change_root_password
 
-- name: MySQL | Changing the root password (external hostname).
+- name: Changing the root password (external hostname).
   mysql_user:
     user: root
     host: "{{item}}"
@@ -36,7 +36,7 @@
   tags:
     - change_root_password
 
-- name: MySQL | Test whether the root password has already been changed (local hostname).
+- name: Test whether the root password has already been changed (local hostname).
   mysql_user:
     user: root
     host: "{{item}}"
@@ -54,7 +54,7 @@
   tags:
     - change_root_password
 
-- name: MySQL | Changing the root password (local hostname).
+- name: Changing the root password (local hostname).
   mysql_user:
     user: root
     host: "{{item}}"
@@ -70,7 +70,7 @@
   tags:
     - change_root_password
 
-- name: MySQL | Configure MySql for easy access as root user
+- name: Configure MySql for easy access as root user
   template:
     src: root_dot_my.cnf.j2
     dest: /root/.my.cnf
@@ -78,7 +78,7 @@
     group: root
     mode: 0600
 
-- name: MySQL | Remove anonymous MySQL server user
+- name: Remove anonymous MySQL server user
   mysql_user:
     name: ""
     host: "{{item}}"
@@ -87,7 +87,7 @@
     - "{{ansible_hostname}}"
     - localhost
 
-- name: MySQL | Remove the MySQL test database
+- name: Remove the MySQL test database
   mysql_db:
     name: test
     state: absent
