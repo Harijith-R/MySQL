@@ -3,7 +3,7 @@
 # Basic settings
 mysql_port: 3306
 mysql_bind_address: "0.0.0.0"
-mysql_root_password: 'eqs@123'
+mysql_root_password: 'GRJlzkkvPimTfkgcSNXw'
 mysql_language: '/usr/share/mysql/'
 mysql_ppa: ''
 mysql_apt_key: ''
