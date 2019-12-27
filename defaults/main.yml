@@ -49,7 +49,6 @@ mysql_users:
     priv: "*.*:ALL" 
     host: "localhost" 
 
-monit_protection: false
 
 # List of apt packages to install
 mysql_packages:
