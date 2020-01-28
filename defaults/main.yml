@@ -3,7 +3,7 @@
 # Basic settings
 mysql_port: 3306
 mysql_bind_address: "0.0.0.0"
-mysql_root_password: 'eqs@123'
+mysql_root_password: '123'
 mysql_language: '/usr/share/mysql/'
 mysql_ppa: ''
 mysql_apt_key: ''
@@ -38,18 +38,17 @@ mysql_ft_min_word_len: 4
 
 # List of databases to be created
 mysql_databases:
-  - name: guacamole_db
+  - name: "{{ mysql_db_name }}"
     collation: "utf8_general_ci"
     encoding: "utf8"     
 
 # List of users to be created
 mysql_users:
-  - name: guacamole_user
-    pass: guacamole
-    priv: "*.*:ALL" 
+  - name: "{{ mysql_db_user }}"
+    pass: "{{ mysql_db_password }}"
+    priv: "{{ mysql_db_name }}.*:ALL" 
     host: "localhost" 
 
-monit_protection: false
 
 # List of apt packages to install
 mysql_packages:

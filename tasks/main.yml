@@ -5,5 +5,3 @@
 - include: secure.yml
 - include: databases.yml
 - include: users.yml
-- include: monit.yml
-  when: monit_protection is defined and monit_protection == true
