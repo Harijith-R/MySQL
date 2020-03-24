@@ -10,7 +10,7 @@
 
 - name: Make sure the MySQL packages are installed
   apt:
-    pkg: "{{ mysql_packages }}"
+    name: "{{ mysql_packages }}"
     update_cache: yes
     cache_valid_time: 3600
 
