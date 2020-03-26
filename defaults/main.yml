@@ -39,7 +39,7 @@ mysql_ft_min_word_len: 4
 # List of databases to be created
 mysql_databases:
   - name: "{{ mysql_db_name }}"
-    collation: "utf8_general_ci"
+    collation: "{{ mysql_collation }}"
     encoding: "utf8"     
 
 # List of users to be created
