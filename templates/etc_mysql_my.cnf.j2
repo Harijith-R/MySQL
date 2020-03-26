@@ -26,7 +26,7 @@ language = {{ mysql_language }}
 bind-address = {{ mysql_bind_address }}
 skip-external-locking
 {% if explicit_defaults_for_timestamp is defined %}
-explicit_defaults_for_timestamp=1
+explicit_defaults_for_timestamp = 1
 {% endif %}
 
 # * Fine Tuning
